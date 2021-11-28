@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>COVID-19 DATA</title>
+
+    
+    <style>
+        .center {
+		  margin: 0;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  -ms-transform: translate(-50%, -50%);
+		  transform: translate(-50%, -50%);
+		}
+    </style>
+    
+</head>
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    <div class="container">   
+        <div class="center">
+            <h1 class="display-4">Edit a record</h1>
+            <br>
+
+            <form method="post" action="/edit">
+
+                <div class="form-group">
+                    <label for="nameFrench">ID</label>
+                    <input type="text" class="form-control form-control-sm" id="id" name="id" readonly="readonly" value="<%=record.id%>">
+                </div>
+
+                <div class="form-group">
+                  <label for="code">Country code</label>
+                  <input type="text" class="form-control form-control-sm" id="code" name="code" placeholder="Enter country code" value="<%=record.countryCode%>">
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="datetime-local" class="form-control form-control-sm" id="date" name="date" placeholder="Enter date" value="<%=record.date.toISOString().substring(0, 16)%>">
+                </div>
+
+                <div class="form-group">
+                    <label for="cases">Cases</label>
+                    <input type="number" class="form-control form-control-sm" id="cases" name="cases" placeholder="Enter number of cases" value="<%=record.cases%>">
+                </div>
+
+                <div class="form-group">
+                    <label for="deaths">Deaths</label>
+                    <input type="number" class="form-control form-control-sm" id="deaths" name="deaths" placeholder="Enter number of deaths" value="<%=record.deaths%>">
+                </div>
+
+                <div class="form-group">
+                    <label for="nameEnglish">Name (EN)</label>
+                    <input type="text" class="form-control form-control-sm" id="nameEnglish" name="nameEnglish" placeholder="Enter English name" value="<%=record.nameEnglish%>">
+                </div>
+
+                <div class="form-group">
+                    <label for="nameFrench">Name (FR)</label>
+                    <input type="text" class="form-control form-control-sm" id="nameFrench" name="nameFrench" placeholder="Enter French name" value="<%=record.nameFrench%>">
+                </div>
+
+               
+                <br>
+                <center>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a class="btn btn-danger" href="/home">Cancel</a>
+                </center>
+              </form>
+
+
+        </div>
+
+    </div>
+    <footer>
+        <center>
+          <p><i class="fas fa-registered"></i> Program by Quang Hieu Vo</p>
+        </center>     
+      </footer>
+</body>
+</html>
